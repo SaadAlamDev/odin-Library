@@ -1,0 +1,36 @@
+body > div{
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px repeat(3,1fr);
+}
+
+.catalog{
+    grid-column: 1/4;
+    grid-row: 2/5;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(auto);
+}
+
+.header{
+    grid-column: 1/4;
+    align-self: center;
+    background-color: bisque;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 10px, 1fr;
+}
+
+.header > button{
+    justify-items: flex-end;
+    align-self: flex-start;
+}
+.book-card{
+    border: 1px solid black;
+    background-color: bisque;
+    padding: 10px;
+    margin: 2em;
+}
