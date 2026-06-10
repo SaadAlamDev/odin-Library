@@ -1,33 +1,35 @@
 let myLibrary = [];
 
-function Book(title, author, pages, status, id){
-  this.id = id;
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
+class Book {
+    constructor(title, author, pages, status, id) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.status = status;
+
+    }
+
+    toggleRead() {
+        if (this.status == "not read yet") {
+            this.status = "Read"
+        }
+        else this.status = "not read yet";
+        return this.status;
+    }
+
+    static addToLib(title, author, pages, status, id) {
+        const newBook = new Book(title, author, pages, status, id);
+        myLibrary.push(newBook);
+    }
 }
 
-Book.prototype.toggleRead = function(){
-  if(this.status == "not read yet"){
-    this.status = "Read"
-  }
-  else this.status = "not read yet";
-  return this.status
-}
-
-function addToLibrary(title, author, pages, status,id){
-  const newBook = new Book(title, author, pages, status, id);
-  myLibrary.push(newBook);
-}
-
-addToLibrary("The Hobbit", "J.R.R Tolkein", 295, "not read yet",crypto.randomUUID());
-addToLibrary("1984", "George Orwell", 288, "read",crypto.randomUUID());
-addToLibrary("The Witcher", "Andrzej Sapkowski", 235, "not read yet",crypto.randomUUID());
-addToLibrary("Harry Potter", "J.K Rowling", 223, "read",crypto.randomUUID());
-addToLibrary("Mein Kampf", "Adolf Hitler", 295, "not read yet",crypto.randomUUID());
-addToLibrary("Atomic Habits", "James Clear", 265, "not read yet",crypto.randomUUID());
-
+Book.addToLib("The Hobbit", "J.R.R Tolkein", 295, "not read yet",crypto.randomUUID());
+Book.addToLib("1984", "George Orwell", 288, "read",crypto.randomUUID());
+Book.addToLib("The Witcher", "Andrzej Sapkowski", 235, "not read yet",crypto.randomUUID());
+Book.addToLib("Harry Potter", "J.K Rowling", 223, "read",crypto.randomUUID());
+Book.addToLib("Mein Kampf", "Adolf Hitler", 295, "not read yet",crypto.randomUUID());
+Book.addToLib("Atomic Habits", "James Clear", 265, "not read yet",crypto.randomUUID());
 
 let catalogOfBooks = document.querySelector(".catalog");
 
