@@ -20,13 +20,13 @@
                     <legend>Enter book details</legend>
 
                     <label for="title">Title</label>
-                    <input id="title" type="text" placeholder="What's the book called?">
+                    <input id="title" type="text" placeholder="What's the book called?" required minlength="2" maxlength="150">
 
                     <label for="author">Author</label>
-                    <input id="author" type="text" placeholder="Who's the author?">
+                    <input id="author" type="text" placeholder="Who's the author?" required pattern="^[A-Za-zÀ-ÿ'\-\.\s\,]+$" minlength="1" maxlength="100">
 
                     <label for="pages">No. of pages</label>
-                    <input id="pages" type="text" placeholder="How many pages does it have?">
+                    <input id="pages" type="number" placeholder="How many pages does it have?" required step="1" min="2" max="1000">
 
                     <button class="submit-button">Add book</button>
                 </form>

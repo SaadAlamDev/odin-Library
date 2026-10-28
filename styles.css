@@ -34,3 +34,12 @@ body > div{
     padding: 10px;
     margin: 2em;
 }
+
+input:user-invalid {
+  border: 2px solid crimson;
+  background-color: #fff0f0;
+}
+
+input:user-valid {
+  border: 2px solid seagreen;
+}
